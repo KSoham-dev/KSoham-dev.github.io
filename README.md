@@ -1,1 +1,1 @@
-## Just a small course practicle (Under Developement)
+## Just a small course practical (Under Developement)
