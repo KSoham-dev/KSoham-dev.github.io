@@ -75,7 +75,7 @@ const app = createApp({
       title: "",
     }
   },
-  store: store,
+
   methods: {
     Submit: async function(){
        fetch(`https://api.wikimedia.org/core/v1/wikipedia/en/search/title?q=${this.title}&limit=5`)
@@ -102,6 +102,8 @@ const app = createApp({
                 search[i] = obj 
                 this.title = "";
             }
+            store.state.success = true
+            console.log(store.state.success)
             console.log(search)
             this.$store.commit('setData', search)
             })
