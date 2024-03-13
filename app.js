@@ -1,6 +1,4 @@
-const { createApp } = Vue;
-
-const store = new Vuex.Store({
+const store = Vuex.createStore({
   state () {
     return {
       result: {},
@@ -69,7 +67,7 @@ const comp = {
   };
 
 
-const app = createApp({
+const app = Vue.createApp({
   data() {
     return {
       title: "",
@@ -106,6 +104,7 @@ const app = createApp({
             console.log(store.state.success)
             console.log(search)
             this.$store.commit('setData', search)
+            console.log(this.$store.state.result)
             })
         .catch((e) => {
               console.error('@SKdebugger Error:', e)
