@@ -1,6 +1,4 @@
-const { createApp } = Vue;
-
-const store = new Vuex.Store({
+const store = Vuex.createStore({
   state () {
     return {
       result: {},
@@ -69,13 +67,13 @@ const comp = {
 };
 
 
-const app = createApp({
+const app = Vue.createApp({
   data() {
     return {
       title: "",
     }
   },
-  store: store,
+
   methods: {
     Submit: async function(){
       fetch(`https://api.wikimedia.org/core/v1/wikipedia/en/search/title?q=${encodeURIComponent(this.title)}&limit=5`)
@@ -92,21 +90,20 @@ const app = createApp({
           return response.json()
         })
         .then(data => {
-          console.log("Success:", data)
-          let search = {};
-          for (let i=0; i < data.pages.length; i++){
-            let obj={}
-            obj["id"] = i
-            obj["title"] = data.pages[i].title
-            obj["desc"] = data.pages[i].description
-						obj["wiki_id"] = data.pages[i].id
-						obj["extract"] = ""
-            search[i] = obj
-            this.title = "";
-          }
-          console.log(search)
-          store.commit('setData', search)
-        })
+              console.log("Success:", data)
+              let search = {};
+              for (let i=0; i < data.pages.length; i++){
+                let obj={}
+                obj["id"] = i
+                obj["title"] = data.pages[i].title
+                obj["desc"] = data.pages[i].description
+                obj["expand"] = false
+                search[i] = obj 
+                this.title = "";
+            }
+            console.log(search)
+            this.$store.commit('setData', search)
+            })
         .catch((e) => {
           console.error('@SKdebugger Error:', e)
         })
