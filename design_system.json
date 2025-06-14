@@ -1,0 +1,27 @@
+{
+  "colors": {
+    "primary": "#1a365d",
+    "secondary": "#2d5a87",
+    "accent": "#ffd700",
+    "background": "#0f1419",
+    "surface": "#1a202c",
+    "text_primary": "#ffffff",
+    "text_secondary": "#a0aec0",
+    "success": "#48bb78",
+    "warning": "#ed8936",
+    "error": "#f56565"
+  },
+  "typography": {
+    "heading_font": "'Inter', 'Segoe UI', system-ui, sans-serif",
+    "body_font": "'Source Sans Pro', 'Segoe UI', system-ui, sans-serif",
+    "code_font": "'JetBrains Mono', 'Fira Code', monospace"
+  },
+  "spacing": {
+    "xs": "0.25rem",
+    "sm": "0.5rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "xl": "2rem",
+    "2xl": "3rem"
+  }
+}

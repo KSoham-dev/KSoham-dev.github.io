@@ -1,29 +1,391 @@
 <!DOCTYPE html>
-<html lang="en">  
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title> The Encyclo </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://unpkg.com/vuex@4.0.0/dist/vuex.global.js"></script>
+    <title>Soham Kulkarni - Data Science Student & Mathematics Enthusiast</title>
+    <meta name="description" content="Portfolio of Soham Kulkarni, 3rd year BS Data Science student at IIT Madras, passionate about mathematics and data science.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <div class="search" style="margin: 100px; margin-left: 500px;">
-            <h1 class="display-4 m-5"> The Encyclo </h1>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-            </svg>
-            <input v-model="title" style="border: none; border-bottom: 1px solid black; width: 300px;" type="search" placeholder="Type and press submit to search">
-            <input type="submit" @click="Submit" value="Submit" style="margin-left: 30px; background-color: white; box-shadow: 2px 0 2px 0;">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="nav-logo">SK</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <div class="content container" style="margin: 100px; margin-left: 110px;">
-            <searchrcomp></searchrcomp>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="math-symbol">∑</span>
+                        Soham Kulkarni
+                        <span class="math-symbol">∫</span>
+                    </h1>
+                    <p class="hero-subtitle">Data Science Student & Mathematics Enthusiast</p>
+                    <p class="hero-description">3rd Year BS Data Science | Indian Institute of Technology Madras</p>
+                    <p class="hero-bio">Passionate about exploring the intersection of mathematics and data science, with a focus on machine learning, statistical modeling, and algorithmic problem-solving.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn--primary">Get In Touch</a>
+                        <a href="mailto:soham.kulkarni@smail.iitm.ac.in" class="btn btn--outline">Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="math-grid">
+                        <div class="math-symbol floating">π</div>
+                        <div class="math-symbol floating">∇</div>
+                        <div class="math-symbol floating">∞</div>
+                        <div class="math-symbol floating">λ</div>
+                        <div class="math-symbol floating">Σ</div>
+                        <div class="math-symbol floating">∫</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">I am a third-year BS Data Science student at the Indian Institute of Technology Madras, where I combine my love for mathematics with cutting-edge data science techniques.</p>
+                    <p>My passion lies in uncovering patterns in complex datasets and developing mathematical models that solve real-world problems. The rigorous academic environment at IIT Madras has shaped my analytical thinking and problem-solving approach.</p>
+                    <p>I aspire to contribute to the field of artificial intelligence and machine learning, particularly in areas where mathematical rigor meets practical innovation.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">📊</div>
+                        <h3>Data Science</h3>
+                        <p>Expert in statistical analysis, machine learning, and data visualization techniques</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🔢</div>
+                        <h3>Mathematics</h3>
+                        <p>Strong foundation in linear algebra, calculus, probability theory, and optimization</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🎓</div>
+                        <h3>IIT Madras</h3>
+                        <p>Pursuing BS in Data Science at India's premier technical institute</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">MATLAB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Data Science</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">Data Visualization</span>
+                        <span class="skill-tag">Predictive Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Mathematics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linear Algebra</span>
+                        <span class="skill-tag">Calculus</span>
+                        <span class="skill-tag">Probability Theory</span>
+                        <span class="skill-tag">Statistics</span>
+                        <span class="skill-tag">Discrete Mathematics</span>
+                        <span class="skill-tag">Optimization</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Tools & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Django</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-content">
+                <div class="education-card">
+                    <div class="education-header">
+                        <div class="education-info">
+                            <h3 class="education-degree">Bachelor of Science in Data Science and Applications</h3>
+                            <p class="education-institution">Indian Institute of Technology Madras</p>
+                            <p class="education-year">2022 - 2026 (Expected)</p>
+                            <p class="education-gpa">CGPA: 8.5/10.0</p>
+                        </div>
+                        <div class="education-logo">
+                            <div class="iit-logo">IIT</div>
+                        </div>
+                    </div>
+                    <div class="coursework">
+                        <h4>Relevant Coursework:</h4>
+                        <div class="coursework-grid">
+                            <span class="course-tag">Machine Learning Foundations</span>
+                            <span class="course-tag">Deep Learning</span>
+                            <span class="course-tag">Statistical Methods</span>
+                            <span class="course-tag">Linear Algebra</span>
+                            <span class="course-tag">Calculus</span>
+                            <span class="course-tag">Business Data Management</span>
+                            <span class="course-tag">Modern Application Development</span>
+                            <span class="course-tag">Database Management Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Mathematical Pattern Recognition</h3>
+                        <span class="project-category">Machine Learning</span>
+                    </div>
+                    <p class="project-description">Developed an ML model to identify and classify mathematical patterns in geometric sequences using computer vision and deep learning techniques.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">NumPy</span>
+                    </div>
+                    <a href="https://github.com/sohamkulkarni/math-pattern-recognition" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Statistical Analysis Dashboard</h3>
+                        <span class="project-category">Data Visualization</span>
+                    </div>
+                    <p class="project-description">Built an interactive web dashboard for statistical analysis and data visualization, featuring real-time data processing and mathematical computations.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Plotly</span>
+                    </div>
+                    <a href="https://github.com/sohamkulkarni/stats-dashboard" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Optimization Algorithm Visualizer</h3>
+                        <span class="project-category">Educational Tool</span>
+                    </div>
+                    <p class="project-description">Created an educational tool that visualizes various optimization algorithms used in machine learning, including gradient descent and its variants.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                    <a href="https://github.com/sohamkulkarni/optimization-visualizer" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Time Series Forecasting Model</h3>
+                        <span class="project-category">Data Science</span>
+                    </div>
+                    <p class="project-description">Implemented advanced time series forecasting models for financial data prediction using ARIMA, LSTM, and ensemble methods.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Statsmodels</span>
+                    </div>
+                    <a href="https://github.com/sohamkulkarni/time-series-forecasting" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="achievements-content">
+                <div class="achievements-section">
+                    <h2 class="section-title">Achievements</h2>
+                    <div class="achievement-list">
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🏆</div>
+                            <div class="achievement-text">
+                                <h4>Top 5% in Linear Algebra course at IIT Madras</h4>
+                                <p>Demonstrated exceptional understanding of mathematical concepts</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🥇</div>
+                            <div class="achievement-text">
+                                <h4>Winner of Inter-Department Mathematical Modeling Competition</h4>
+                                <p>Applied mathematical modeling to solve real-world problems</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">📝</div>
+                            <div class="achievement-text">
+                                <h4>Published research paper on 'Applications of Graph Theory in Social Network Analysis'</h4>
+                                <p>Contributing to academic research in data science</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">💻</div>
+                            <div class="achievement-text">
+                                <h4>Active contributor to open-source mathematical libraries</h4>
+                                <p>Supporting the data science community through code contributions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="interests-section">
+                    <h2 class="section-title">Research Interests</h2>
+                    <div class="interests-grid">
+                        <div class="interest-card">
+                            <div class="interest-icon">📐</div>
+                            <h4>Theoretical Mathematics</h4>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">📈</div>
+                            <h4>Algorithmic Trading</h4>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">🧬</div>
+                            <h4>Computational Biology</h4>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">🔬</div>
+                            <h4>Mathematical Modeling</h4>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">🤖</div>
+                            <h4>AI Ethics Research</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="geometric-bg"></div>
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-description">Interested in collaborating on data science projects or discussing mathematical concepts? I'd love to hear from you!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:soham.kulkarni@smail.iitm.ac.in">soham.kulkarni@smail.iitm.ac.in</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🔗</div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="https://linkedin.com/in/soham-kulkarni" target="_blank">linkedin.com/in/soham-kulkarni</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💻</div>
+                            <div>
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/sohamkulkarni" target="_blank">github.com/sohamkulkarni</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Chennai, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Soham Kulkarni. Built with passion for mathematics and data science.</p>
+                <div class="footer-math">
+                    <span class="math-symbol">∑</span>
+                    <span class="math-symbol">∫</span>
+                    <span class="math-symbol">∇</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
-<script src="app.js"></script>
 </html>
